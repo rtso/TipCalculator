@@ -87,6 +87,50 @@
                                     <rect key="frame" x="146" y="257" width="109" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. people:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7X-xh-HY6">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="305" width="120" height="21"/>
+                                </variation>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="P0U-Fa-Q7D">
+                                <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="206" y="335" width="94" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="peopleStepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4ym-EH-3WL"/>
+                                </connections>
+                            </stepper>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-Qm-tzS">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="101" y="334" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total per person:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZw-F2-0X1">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="123" y="389" width="154" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpn-c1-HX2">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="147" y="418" width="109" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -98,6 +142,11 @@
                                 <exclude reference="Vod-vX-a6W"/>
                                 <exclude reference="4n0-EK-3qy"/>
                                 <exclude reference="gcu-pl-xOY"/>
+                                <exclude reference="h7X-xh-HY6"/>
+                                <exclude reference="P0U-Fa-Q7D"/>
+                                <exclude reference="8Nf-Qm-tzS"/>
+                                <exclude reference="BZw-F2-0X1"/>
+                                <exclude reference="Bpn-c1-HX2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -109,14 +158,22 @@
                                 <include reference="Vod-vX-a6W"/>
                                 <include reference="4n0-EK-3qy"/>
                                 <include reference="gcu-pl-xOY"/>
+                                <include reference="h7X-xh-HY6"/>
+                                <include reference="P0U-Fa-Q7D"/>
+                                <include reference="8Nf-Qm-tzS"/>
+                                <include reference="BZw-F2-0X1"/>
+                                <include reference="Bpn-c1-HX2"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="checkTotal" destination="CrF-LR-DBU" id="m2H-Jr-J0M"/>
+                        <outlet property="peopleLabel" destination="8Nf-Qm-tzS" id="gIm-de-fyy"/>
+                        <outlet property="peopleStepper" destination="P0U-Fa-Q7D" id="fjP-rB-mbg"/>
                         <outlet property="tipAmount" destination="Jzh-Iq-SBy" id="iri-gn-osL"/>
                         <outlet property="tipLabel" destination="I0Z-Ec-iWh" id="52Z-dh-XZs"/>
                         <outlet property="totalLabel" destination="gcu-pl-xOY" id="m37-LZ-bqH"/>
+                        <outlet property="totalPerPersonLabel" destination="Bpn-c1-HX2" id="xev-Vi-fKp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
