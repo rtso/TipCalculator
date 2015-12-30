@@ -28,7 +28,7 @@
                                     <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="iTm-sN-TWj"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-Ec-iWh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-Ec-iWh">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,23 +37,40 @@
                                     <rect key="frame" x="92" y="185" width="217" height="66"/>
                                 </variation>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-Iq-SBy">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <segments>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="259" width="121" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="tipAmountChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zpp-Gu-z4W"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="CrF-LR-DBU"/>
                                 <exclude reference="I0Z-Ec-iWh"/>
+                                <exclude reference="Jzh-Iq-SBy"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="CrF-LR-DBU"/>
                                 <include reference="I0Z-Ec-iWh"/>
+                                <include reference="Jzh-Iq-SBy"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="checkTotal" destination="CrF-LR-DBU" id="m2H-Jr-J0M"/>
+                        <outlet property="tipAmount" destination="Jzh-Iq-SBy" id="iri-gn-osL"/>
                         <outlet property="tipLabel" destination="I0Z-Ec-iWh" id="52Z-dh-XZs"/>
                     </connections>
                 </viewController>
