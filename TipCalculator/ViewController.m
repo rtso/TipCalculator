@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *checkTotal;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipAmount;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property NSInteger percentTip;
 
 @end
@@ -20,7 +21,8 @@
 - (IBAction)textFieldChanged:(UITextField *)sender {
     float check = [self.checkTotal.text floatValue];
     float tip = check * ((float)self.percentTip / 100.0);
-    self.tipLabel.text = [NSString stringWithFormat:@"%.2f", tip];
+    self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
+    self.totalLabel.text = [NSString stringWithFormat:@"$%.2f", (tip + check)];
 }
 - (IBAction)tipAmountChanged:(UISegmentedControl *)sender {
     if (self.tipAmount.selectedSegmentIndex == 0) {
@@ -33,6 +35,7 @@
     float check = [self.checkTotal.text floatValue];
     float tip = check * ((float)self.percentTip / 100.0);
     self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
+    self.totalLabel.text = [NSString stringWithFormat:@"$%.2f", (tip + check)];
 }
 
 - (void)viewDidLoad {
